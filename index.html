@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özlem Yufka Atakum | Kurumsal & Geleneksel Lezzet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfcf9;
+            --text-color: #1a1a1a;
+            --accent-color: #2d4a3e;
+            --white: #ffffff;
+            --gold: #f39c12;
+            --light-grey: #f4f2ee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* Navigasyon ve Yuvarlak Logo */
+        nav { padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(253, 252, 249, 0.95); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 75px; width: 75px; object-fit: cover; border-radius: 50%; border: 2px solid var(--accent-color); transition: 0.3s; }
+        .logo:hover img { transform: scale(1.05); }
+        .nav-links a { margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+        section { padding: 6rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 4rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 2px; background: var(--accent-color); margin: 20px auto; }
+
+        .hero { padding: 4rem 1.5rem; text-align: center; max-width: 1100px; margin: 0 auto; }
+        .hero-img { width: 100%; max-height: 600px; object-fit: cover; border-radius: 4px; margin-bottom: 2.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        /* Hakkımızda ve Yuvarlak Logo */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-logo-container { text-align: center; }
+        .about-logo-container img { max-width: 300px; height: 300px; object-fit: cover; border-radius: 50%; border: 4px solid var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Ürün Kartları ve Sipariş Butonları */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: var(--white); border-radius: 4px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; }
+        .product-info { padding: 1.5rem; text-align: center; flex-grow: 1; }
+        .order-btn { display: block; background: var(--accent-color); color: white !important; padding: 12px; text-align: center; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin: 0 1.5rem 1.5rem; border-radius: 2px; }
+        .order-btn:hover { background: var(--gold); transform: translateY(-3px); }
+
+        .ticker-wrap { background: var(--accent-color); color: white; padding: 3rem 0; overflow: hidden; white-space: nowrap; margin: 4rem 0; }
+        .ticker { display: inline-block; animation: ticker 60s linear infinite; }
+        .ticker span { font-size: 1.3rem; font-family: 'Playfair Display'; font-style: italic; padding: 0 60px; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Kurumsal Bölüm */
+        .b2b-section { background: var(--accent-color); color: white; border-radius: 8px; padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 4rem; }
+        .b2b-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: #fdfaf6; }
+        .b2b-features { list-style: none; margin-bottom: 30px; }
+        .b2b-features li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .b2b-features li::before { content: '◈'; color: var(--gold); }
+        .b2b-cta { display: inline-block; background: var(--gold); color: white !important; padding: 18px 45px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1.5px; }
+        .b2b-cta:hover { background: #e67e22; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+
+        /* Profesyonel İletişim ve Harita */
+        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 30px; align-items: stretch; margin-top: 2rem; }
+        .contact-details { flex: 1; min-width: 350px; display: flex; flex-direction: column; gap: 20px; }
+        .contact-item { padding: 30px; background: white; border: 1px solid #eee; border-radius: 4px; height: 100%; }
+        .contact-item h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
+        .map-container { flex: 1.5; min-width: 350px; border-radius: 4px; overflow: hidden; border: 1px solid #eee; min-height: 480px; }
+
+        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .recipe-card { background: white; border-radius: 4px; overflow: hidden; border: 1px solid #eee; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 16px 28px; border-radius: 50px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 10px; }
+
+        @media (max-width: 768px) { .b2b-section, .contact-wrapper, .about-grid { grid-template-columns: 1fr; flex-direction: column; } .hero h1 { font-size: 2.8rem; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo"><img src="https://ibb.co/jPVq83BX" alt="Özlem Yufka Logo"></a>
+        <div class="nav-links">
+            <a href="#hakkimizda">Hikayemiz</a>
+            <a href="#urunler">Ürünler</a>
+            <a href="#kurumsal">Toplu Sipariş</a>
+            <a href="#tarifler">Tarifler</a>
+            <a href="#iletisim">İletişim</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <img src="https://ibb.co/Xr5Hb286" alt="Özlem Yufka Atakum" class="hero-img">
+        <h1>Atakum’un Taze Mirası</h1>
+        <p>“30 yıllık tecrübe ve doğallığın lezzetini sofranıza taşıyoruz.”</p>
+    </header>
+
+    <section id="hakkimizda">
+        <div class="about-grid">
+            <div class="about-logo-container"><img src="https://ibb.co/jPVq83BX" alt="Özlem Yufka"></div>
+            <div>
+                <h2 style="margin-bottom: 1rem; color: var(--accent-color);">Biz Kimiz?</h2>
+                <p>Özlem Yufka olarak, Atakum’un vazgeçilmez lezzet duraklarından biri olmanın gururunu yaşıyoruz. Geleneksel yöntemlerle, el emeğiyle ve hijyen kurallarına uygun şekilde ürettiğimiz ürünlerle yıllardır sofralara lezzet katıyoruz.</p>
+                <p style="margin-top: 1rem;">Her gün taze olarak hazırladığımız ürünlerimizle hem evlere hem de işletmelere güvenilir üretim sunuyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="urunler">
+        <h2 class="section-title">Ürünlerimiz</h2>
+        <div class="product-grid">
+            <script>
+                function createProduct(img, title, type) {
+                    const waLink = `https://wa.me/905448017547?text=Merhaba, ${title} siparişi vermek istiyorum.`;
+                    document.write(`
+                        <div class="product-card">
+                            <img src="${img}" alt="${title}">
+                            <div class="product-info"><h3>${title}</h3><p>${type}</p></div>
+                            <a href="${waLink}" target="_blank" class="order-btn">Sipariş Ver</a>
+                        </div>
+                    `);
+                }
+                createProduct('https://ibb.co/FkVZ7ZyF', 'Günlük Yufka', 'Taze El Açması');
+                createProduct('https://ibb.co/7tX0qtb3', 'Kuru Yufka', 'Ramazan & Köy');
+                createProduct('https://ibb.co/qGsQnJp', 'Tiritlik Yufka', 'Geleneksel');
+                createProduct('https://ibb.co/39H2YKRz', 'Böreklik Yufka', 'İncecik');
+                createProduct('https://ibb.co/xtN5s4FM', 'Su Böreği Yufkası', 'Özel Haşlamalık');
+                createProduct('https://ibb.co/PGP5MqNG', 'Ev Mantısı', 'El Üretimi');
+                createProduct('https://ibb.co/DfWPRBL5', 'Erişte', 'Makarnalık & Çorbalık');
+                createProduct('https://ibb.co/49KPh6M', 'Çiğ Kadayıf', 'Taze Tel');
+                createProduct('https://ibb.co/b5wp5Zfk', 'Pişmiş Kadayıf', 'Çıtır');
+                createProduct('https://ibb.co/4R0YCSPr', 'Ziron – Siron', 'Yöresel');
+                createProduct('https://ibb.co/FkZYHHqf', 'Üçgen Yufka', 'Pratik Katlama');
+            </script>
+        </div>
+    </section>
+
+    <section id="kurumsal">
+        <div class="b2b-section">
+            <div class="b2b-content">
+                <h2>Kurumsal İş Birliği</h2>
+                <p style="margin-bottom: 20px;">Restoranlar ve marketler için günlük taze üretim çözümleri sunuyoruz.</p>
+                <ul class="b2b-features">
+                    <li>İşletmelere özel avantajlı fiyatlandırma</li>
+                    <li>Günlük sevkiyat ve adrese teslimat</li>
+                </ul>
+                <a href="mailto:atakumozlemyufka@gmail.com?subject=Kurumsal Teklif Talebi" class="b2b-cta">Kurumsal Teklif Al</a>
+            </div>
+            <div style="text-align: center;"><h3 style="color: var(--gold); font-size: 3.5rem;">30+</h3><p>Yıllık Tecrübe</p></div>
+        </div>
+    </section>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>"Kaliteli ve taze ürünler, güler yüzlü esnaflık..." ★★★★★</span>
+            <span>"Özlem Yufka 5 yıldız! Tertemiz, tavsiye ederim." ★★★★★</span>
+            <span>"En iyi yufka ve kadayıf burada!" ★★★★★</span>
+        </div>
+    </div>
+
+    <section id="tarifler">
+        <h2 class="section-title">Pratik Tarifler</h2>
+        <div class="recipe-grid">
+            <script>
+                function createRecipe(id, title, score, time) {
+                    document.write(`
+                        <div class="recipe-card">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/${id}" 
+                                srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/${id}?autoplay=1><img src=https://img.youtube.com/vi/${id}/hqdefault.jpg alt='${title}'><span>▶</span></a>"
+                                allowfullscreen></iframe>
+                            </div>
+                            <div class="recipe-info">
+                                <h3>${title}</h3>
+                                <div class="recipe-meta"><span style="color:#f39c12">⭐ ${score}</span><span>⏱ ${time}</span></div>
+                            </div>
+                        </div>
+                    `);
+                }
+                createRecipe('K3vQ4HOpXJQ', 'Yufkadan Kolay Börek', '4.9 (128)', '15 dk');
+                createRecipe('GtcpbAYbiYI', 'Tavuklu Dürüm', '4.8 (95)', '10 dk');
+                createRecipe('EwM-sAAaPUY', 'Patlıcanlı Yaz Böreği', '4.7 (87)', '20 dk');
+                createRecipe('OvOt5raNHEg', 'Yufka Pizzası', '4.9 (142)', '25 dk');
+                createRecipe('Pw5U6EG1ENo', 'Şiş Mantısı', '4.6', '15 dk');
+            </script>
+        </div>
+    </section>
+
+    <section id="iletisim">
+        <h2 class="section-title">Bize Ulaşın</h2>
+        <div class="contact-wrapper">
+            <div class="contact-details">
+                <div class="contact-item"><h4>📍 ADRES</h4><p>Cumhuriyet Mahallesi, Doğuş Caddesi No:2,<br>55200 Atakum / Samsun</p></div>
+                <div class="contact-item"><h4>📞 İLETİŞİM</h4><p>0544 801 75 47<br>atakumozlemyufka@gmail.com</p></div>
+                <div class="contact-item"><h4>🕒 ÇALIŞMA SAATLERİ</h4><p>Pazartesi – Cumartesi: 07:00 – 18:30<br>Pazar: Kapalı</p></div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://maps.google.com/?cid=516494651930382226&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ5" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/905448017547" class="wa-float" target="_blank">WhatsApp Sipariş</a>
+
+    <footer style="text-align: center; padding: 4rem; opacity: 0.4; font-size: 0.8rem;">
+        © 2026 Özlem Yufka Atakum. Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html>
