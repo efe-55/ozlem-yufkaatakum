@@ -19,7 +19,6 @@
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* Navigasyon: Logo ve Metin Yan Yana */
         nav { padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(253, 252, 249, 0.95); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .logo-container img { height: 65px; width: 65px; object-fit: cover; border-radius: 50%; border: 2px solid var(--accent-color); }
@@ -34,7 +33,6 @@
         .hero { padding: 3rem 1.5rem; text-align: center; max-width: 1100px; margin: 0 auto; }
         .hero-img { width: 100%; max-height: 550px; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
 
-        /* Ürün Kartları ve Sipariş Butonları */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .product-card { background: var(--white); border-radius: 4px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; }
         .product-card img { width: 100%; height: 280px; object-fit: cover; }
@@ -42,23 +40,11 @@
         .order-btn { display: block; background: var(--accent-color); color: white !important; padding: 12px; text-align: center; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin: 0 1.2rem 1.2rem; border-radius: 2px; }
         .order-btn:hover { background: var(--gold); transform: translateY(-3px); }
 
-        /* Ticker */
-        .ticker-wrap { background: var(--accent-color); color: white; padding: 2.5rem 0; overflow: hidden; white-space: nowrap; margin: 3rem 0; }
-        .ticker { display: inline-block; animation: ticker 50s linear infinite; }
-        .ticker span { font-size: 1.2rem; font-family: 'Playfair Display'; font-style: italic; padding: 0 50px; }
-        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* İletişim ve Harita Orantısı */
         .contact-wrapper { display: flex; flex-wrap: wrap; gap: 25px; align-items: stretch; margin-top: 2rem; }
         .contact-details { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 15px; }
         .contact-item { padding: 25px; background: white; border: 1px solid #eee; border-radius: 4px; }
         .contact-item h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 8px; }
         .map-container { flex: 1.5; min-width: 320px; border-radius: 4px; overflow: hidden; border: 1px solid #eee; min-height: 450px; }
-
-        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .recipe-card { background: white; border-radius: 4px; overflow: hidden; border: 1px solid #eee; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1000; display: flex; align-items: center; gap: 10px; }
 
@@ -69,7 +55,7 @@
 
     <nav>
         <div class="logo-container">
-            <img src="BURAYA_LOGO_DİREKT_LİNK_GELMELİ.jpg" alt="Logo">
+            <img src="https://i.ibb.co/mVvdRh1W/zlem.png" alt="Logo">
             <span class="logo-text">Özlem Yufka Atakum</span>
         </div>
         <div class="nav-links">
@@ -81,7 +67,7 @@
     </nav>
 
     <header class="hero">
-        <img src="BURAYA_ANA_RESİM_DİREKT_LİNK_GELMELİ.jpg" alt="Ana Görsel" class="hero-img">
+        <img src="https://i.ibb.co/S4mSPsrH/ana.jpg" alt="Ana Görsel" class="hero-img">
         <h1>Atakum’un Taze Mirası</h1>
         <p>“30 yıllık tecrübe ve doğallığın lezzetini sofranıza taşıyoruz.”</p>
     </header>
@@ -100,36 +86,13 @@
                         </div>
                     `);
                 }
-                // DİKKAT: Buradaki linkleri "Resim adresini kopyala" yaparak güncelleyin
-                createProduct('https://i.ibb.co/FkVZ7ZyF/yufka.jpg', 'Günlük Yufka', 'Taze El Açması');
-                createProduct('https://i.ibb.co/7tX0qtb3/kuru.jpg', 'Kuru Yufka', 'Ramazan & Köy');
-                createProduct('https://i.ibb.co/qGsQnJp/tirit.jpg', 'Tiritlik Yufka', 'Geleneksel');
-                createProduct('https://i.ibb.co/39H2YKRz/borek.jpg', 'Böreklik Yufka', 'İncecik');
-                createProduct('https://i.ibb.co/xtN5s4FM/suboregi.jpg', 'Su Böreği Yufkası', 'Özel Haşlamalık');
-                createProduct('https://i.ibb.co/PGP5MqNG/manti.jpg', 'Ev Mantısı', 'El Üretimi');
-                createProduct('https://i.ibb.co/DfWPRBL5/eriste.jpg', 'Erişte', 'Makarnalık & Çorbalık');
-                createProduct('https://i.ibb.co/49KPh6M/cig.jpg', 'Çiğ Kadayıf', 'Taze Tel');
-                createProduct('https://i.ibb.co/b5wp5Zfk/pismis.jpg', 'Pişmiş Kadayıf', 'Çıtır');
-                createProduct('https://i.ibb.co/4R0YCSPr/siron.jpg', 'Ziron – Siron', 'Yöresel');
-                createProduct('https://i.ibb.co/FkZYHHqf/ucgen.jpg', 'Üçgen Yufka', 'Pratik Katlama');
-            </script>
-        </div>
-    </section>
 
-    <section id="iletisim">
-        <h2 class="section-title">Bize Ulaşın</h2>
-        <div class="contact-wrapper">
-            <div class="contact-details">
-                <div class="contact-item"><h4>📍 ADRES</h4><p>Cumhuriyet Mahallesi, Doğuş Caddesi No:2, Atakum / Samsun</p></div>
-                <div class="contact-item"><h4>📞 İLETİŞİM</h4><p>0544 801 75 47<br>atakumozlemyufka@gmail.com</p></div>
-                <div class="contact-item"><h4>🕒 SAATLER</h4><p>07:00 – 18:30 (Pazar Kapalı)</p></div>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.46!2d36.27!3d41.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIwJzI0LjAiTiAzNsKwMTYnMTIuMCJF!5e0!3m2!1str!2str!4v1640000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/905448017547" class="wa-float" target="_blank">WhatsApp Sipariş</a>
-</body>
-</html>
+                createProduct('https://i.ibb.co/BHNWsWQ9/yufka.jpg', 'Günlük Yufka', 'Taze El Açması');
+                createProduct('https://i.ibb.co/fd2TsdQ3/kuru.jpg', 'Kuru Yufka', 'Ramazan & Köy');
+                createProduct('https://i.ibb.co/4yTrf1p/tirit.jpg', 'Tiritlik Yufka', 'Geleneksel');
+                createProduct('https://i.ibb.co/1tx1Jcz6/boreklik.jpg', 'Böreklik Yufka', 'İncecik');
+                createProduct('https://i.ibb.co/nNFk0WPD/su.avif', 'Su Böreği Yufkası', 'Özel Haşlamalık');
+                createProduct('https://i.ibb.co/tpvbzV4p/mant.jpg', 'Ev Mantısı', 'El Üretimi');
+                createProduct('https://i.ibb.co/XxLfCnVS/orba.jpg', 'Erişte / Çorbalık', 'Makarnalık & Çorbalık');
+                createProduct('https://i.ibb.co/m1b6fLt/kaday-f.jpg', 'Çiğ Kadayıf', 'Taze Tel');
+                createProduct('https://i.ibb.co/jk07k2pS/pismis.jpg',
